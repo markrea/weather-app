@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from "prop-types";
 import LocationDetails from './location-details';
 import ForecastSummaries from './forecast-summaries';
-import ForecastSummary from './forcast-summary';
+
+import '../styles/app.css';
 
 const App = (props) => (
     <div className="forecast">
