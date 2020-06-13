@@ -25,7 +25,7 @@ describe("ForecastSummary", () => {
             />
         );
         expect(getByText("mockDate")).toHaveClass("date");
-        expect(getByText("mockTemperature")).toHaveClass("temperature");
+        expect(getByText("mockTemperature°C")).toHaveClass("temperature");
         expect(getByText("mockDescription")).toHaveClass("description");
         expect(getByText("mockIcon")).toHaveClass("icon");
     });
