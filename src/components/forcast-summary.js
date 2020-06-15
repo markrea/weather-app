@@ -5,8 +5,8 @@ import WeatherIcon from 'react-icons-weather';
 
 const ForecastSummary = props => (
     <div className ="forecast-summary">
-        <div>
-            <span className="date" data-testid="date-id">{`${props.date}`}</span>
+        <div className="date" data-testid="date-id">
+            <span >{moment(props.date).format('ddd Do MMM')}</span>
         </div>
         <div className="icon" data-testid="icon-id">
   <WeatherIcon name="owm" iconId={props.icon} />
