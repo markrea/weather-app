@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from "prop-types";
 import LocationDetails from './location-details';
 import ForecastSummaries from './forecast-summaries';
+import ForecastDetails from './forecast-details';
 
 import '../styles/app.css';
+
 
 const App = (props) => (
     <div className="forecast">
@@ -12,7 +14,12 @@ const App = (props) => (
     country={props.location.country} />
 
     <ForecastSummaries forecasts={props.forecasts} />
+
+    <ForecastDetails forecasts={props.forecasts[0]} />
     </div>
+    
+   
+    
 );
 
 App.propTypes = {
