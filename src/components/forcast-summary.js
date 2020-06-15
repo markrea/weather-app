@@ -1,24 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types"
+import moment from "moment";
+import WeatherIcon from 'react-icons-weather';
 
 const ForecastSummary = props => (
-    <div>
-        <span className="date" data-testid="date-id">{`${props.date}`}</span>
-        <br />
-        <span className="icon" data-testid="icon-id">{`${props.icon}`}</span>
-        <br />
-        <span className="temperature" data-testid="temperature-id">{`${props.temperature}°C`}</span>
-        <br />
-        <span className="description" data-testid="description-id">{`${props.description}`}</span>
-       
+    <div className ="forecast-summary">
+        <div>
+            <span className="date" data-testid="date-id">{`${props.date}`}</span>
+        </div>
+        <div className="icon" data-testid="icon-id">
+  <WeatherIcon name="owm" iconId={props.icon} />
+</div>
+        <div>
+            <span className="temperature" data-testid="temperature-id">{props.temperature}&deg;C</span>
+        </div>
+        <div>
+            <span className="description" data-testid="description-id">{`${props.description}`}</span>
+        </div>
+
     </div>
 );
 
-/*ForecastSummary.propTypes ={
-    date: PropTypes.string.isRequired,
-    temperature: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired,
+ForecastSummary.propTypes = {
+    forecasts: PropTypes.shape({
+        date: PropTypes.string.isRequired,
+        temperature: PropTypes.number.isRequired,
+        description: PropTypes.string.isRequired,
+        icon: PropTypes.object.isRequired,
+    })
 };
-*/
+
 export default ForecastSummary;
