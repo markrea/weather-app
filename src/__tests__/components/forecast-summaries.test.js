@@ -1,6 +1,6 @@
-import React from "react"
-import { cleanup, render, } from "@testing-library/react"
-import ForecastSummaries from "../../components/forecast-summaries"
+import React from "react";
+import { cleanup, render, } from "@testing-library/react";
+import ForecastSummaries from "../../components/forecast-summaries";
 
 
 afterEach(cleanup);

@@ -14,7 +14,7 @@ const App = (props) => (
     country={props.location.country} />
 
     <ForecastSummaries forecasts={props.forecasts} />
-
+  <br />
     <ForecastDetails forecasts={props.forecasts[0]} />
     </div>
     

@@ -23,7 +23,7 @@ const ForecastSummary = props => (
 
 ForecastSummary.propTypes = {
     forecasts: PropTypes.shape({
-        date: PropTypes.string.isRequired,
+        date: PropTypes.number.isRequired,
         temperature: PropTypes.number.isRequired,
         description: PropTypes.string.isRequired,
         icon: PropTypes.object.isRequired,
