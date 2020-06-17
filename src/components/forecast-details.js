@@ -21,7 +21,7 @@ const ForecastDetails = props =>
             <span>Wind Speed: {props.forecasts.wind.speed}mph</span>
         </div>
         <div className="windDirection" data-testid="windDirection-id">
-            <span>Wind Direction: {props.forecasts.wind.direction}</span>
+            <span>Wind Direction: {props.forecasts.wind.direction.toUpperCase()}</span>
         </div>
     </div>
 );
