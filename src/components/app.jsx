@@ -28,35 +28,32 @@ const App = () => {
       })
   }, []);
 
-  const searchCity = (city) => {
+  const getCity = (city) => {
     const query = city.toLowerCase();
 
-    
+
     axios
-    .get('https://mcr-codes-weather.herokuapp.com/forecast?city=' +query)
-    .then((res) => {
-      setForecasts(res.data.forecasts);
-      setLocation(res.data.location);
-    })
-    .catch((err) => {
-      alert('Location not found');
-    }, []);
+      .get(`https://mcr-codes-weather.herokuapp.com/forecast?city=${query}`)
+      .then((res) => {
+        setForecasts(res.data.forecasts);
+        setLocation(res.data.location);
+      })
+      .catch((err) => {
+        alert('Location not found');
+      }, []);
   }
 
   const selectedForecast = forecasts.find(forecast => forecast.date === selectedDate);
 
-  const handleForecastSelect = (date) => {
-    setSelectedDate(date)
-  };
   return (
     <div className="forecast">
       <LocationDetails
         city={location.city}
         country={location.country} />
-      <SearchForm onCitySearch={searchCity} />
+      <SearchForm onCitySearch={getCity} />
       <ForecastSummaries
         forecasts={forecasts}
-        onForecastSelect={handleForecastSelect} />
+        onForecastSelect={setSelectedDate} />
       {
         selectedForecast && <ForecastDetails forecasts={selectedForecast} />
       }
