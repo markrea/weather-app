@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import moment from "moment";
 import WeatherIcon from 'react-icons-weather';
 
+import '../styles/forecast-summary.css'
+
 const ForecastSummary = props => (
     <div className="forecast-summary">
         <div className="date" data-testid="date-id">
