@@ -14,6 +14,7 @@ const SearchForm = props => {
                 id="search"
                 onChange={handleInputChange}
                 value={searchText}
+                placeholder="Check your location"
             />
             <button
                 type="submit"

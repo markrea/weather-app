@@ -12,15 +12,19 @@ const ForecastSummary = props => {
             <div className="date" data-testid="date-id">
                 <span >{moment(date).format('ddd Do MMM')}</span>
             </div>
+            <br/>
             <div className="icon" data-testid="icon-id">
                 <WeatherIcon name="owm" iconId={icon} />
             </div>
+            <br />
             <div>
                 <span className="temperature" data-testid="temperature-id">{temperature}&deg;C</span>
             </div>
+            
             <div>
                 <span className="description" data-testid="description-id">{`${description}`}</span>
             </div>
+            <br />
             <div>
                 <button onClick={() => onSelect(date)}>More details</button>
             </div>

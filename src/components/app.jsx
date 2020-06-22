@@ -39,7 +39,7 @@ const App = () => {
         setLocation(res.data.location);
       })
       .catch((err) => {
-        alert('Location not found');
+        alert('City not found');
       }, []);
   }
 
@@ -51,9 +51,11 @@ const App = () => {
         city={location.city}
         country={location.country} />
       <SearchForm onCitySearch={getCity} />
+      <br/>
       <ForecastSummaries
         forecasts={forecasts}
         onForecastSelect={setSelectedDate} />
+        <br />
       {
         selectedForecast && <ForecastDetails forecasts={selectedForecast} />
       }
