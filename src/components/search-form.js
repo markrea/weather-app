@@ -8,18 +8,12 @@ const SearchForm = props => {
         setSearchText(event.target.value);
 
     };
-    const handleKeyPress = (event) => {
-       if (event.key ==="Enter") {
-        const { onAccept } = this.props;
-        onAccept && onAccept(event.target.value);
-    };
-};
+    
     return (
-        <form className="search-form">
+        <div className="search-form">
             <input type="text"
                 id="search"
                 onChange={handleInputChange}
-                onKeyPress={handleKeyPress}
                 value={searchText}
                 placeholder="Check your location"
             />
@@ -28,9 +22,9 @@ const SearchForm = props => {
                 onClick={() => onCitySearch(searchText)}
             >Search
         </button>
-        </form>
+        </div>
     );
-}
+    }
 
 SearchForm.propTypes = {
     onCitySearch: PropTypes.func.isRequired
