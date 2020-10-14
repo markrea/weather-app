@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 const SearchForm = props => {
     const { onCitySearch } = props;
-    const [searchText, setSearchText] = useState("")
+    const [searchText, setSearchText] = useState("");
     const handleInputChange = (event) => {
         setSearchText(event.target.value);
 
